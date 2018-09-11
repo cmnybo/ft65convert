@@ -41,6 +41,7 @@ This program is currently in alpha. I do not have an FT-65 to test with yet, but
 ## CSV Format:
 The first row in the CSV file is the header.  
 Values are not case sensitive.
+
 | Col | Parameter            | Values |
 | --- | -------------------- | --- |
 |  A  |  Channel number      | 1-200 \| Special Channels
