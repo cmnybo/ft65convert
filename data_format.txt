@@ -1,0 +1,174 @@
+Config Header
+000-008         Model                   [ASCII] ("H-420   " = FT-65R, "FT-25R  " = FT-25R)
+00A             Auto Power Off          [0-24]  (Off to 12 Hours in 30 minute steps)
+00C             ARTS Mode               [0-2]   (Off, In Range, Always)
+00E             ARTS Inverval           [0-1]   (15 Seconds, 25 Seconds)
+010             Batt Save               [0-5]   (Off, 0.2, 0.3, 0.5, 1, 2 Seconds)
+012             Busy Channel Lockout    [0|1]   (Off, On)
+014             Beep                    [0-2]   (Key+SC, Key, Off)
+016             Bell                    [0-5]   (Off, 1, 3, 5, 8, Continue)
+018             Voice Compander         [0|1]   (Off, On)
+01A             ARTS CW ID              [0|1]   (Off, On)
+01C-021         ARTS Callsign           [ASCII] (6 Characters)
+022             DTMF Mode               [0-1]   (Manual, Auto)
+024             DTMF Delay              [0-4]   (50ms, 250ms, 450ms, 750ms, 1000ms)
+026             DTMF Speed              [0|1]   (50ms, 100ms)
+028             Band Edge Beep          [0|1]   (Off, On)
+02A             Key Lockout             [0-2]   (Key, PTT, K+P)
+02C             Lamp                    [0-4]   (5 Sec, 10 Sec, 30 Sec, Continue, Off)
+02E             TX LED                  [0|1]   (Off, On)
+030             Busy LED                [0|1]   (Off, On)
+032             Monitor / Tcall         [0-4]   (Monitor, 1750Hz, 2100Hz, 1000Hz, 1450Hz)
+034             Priority Revert         [0|1]   (Off, On)
+036             Scan Resume             [0-1]   (Busy, Hold, Time)
+038             RF SQL                  [0-8]   (Off, S1, S2, S3, S4, S5, S6, S8, Full)
+03A             Scan Lamp               [0|1]   (Off, On)
+03C             Scramble                [0|1]   (Off, On)
+03E             TX Save                 [0|1]   (Off, On)
+040             VFO Split               [0|1]   (Off, On)
+042             VOX                     [0|1]   (Off, On)
+044             Wide FM Receive         [0|1]   (Off, On)
+046             Weather Alert           [0|1]   (Off, On)
+048             Time Out Timer          [0-30]  (Off, 1-30 Minutes)
+04A             Pager TX 1              [0-49]  (CTCSS Tones)
+04C             Pager TX 2              [0-49]  (CTCSS Tones)
+04E             Pager RX 1              [0-49]  (CTCSS Tones)
+050             Pager RX 2              [0-49]  (CTCSS Tones)
+052             Answer Back             [0|1]   (Off, On)
+054             Password Enable         [0|1]   (Off, On)
+056-059         Password                [ASCII] (4 Digits)
+05A-069         DTMF Memory 1           [ASCII] (16 Digits Max)
+06A-079         DTMF Memory 2           [ASCII] (16 Digits Max)
+07A-089         DTMF Memory 3           [ASCII] (16 Digits Max)
+08A-099         DTMF Memory 4           [ASCII] (16 Digits Max)
+09A-0A9         DTMF Memory 5           [ASCII] (16 Digits Max)
+0AA-0B9         DTMF Memory 6           [ASCII] (16 Digits Max)
+0BA-0C9         DTMF Memory 7           [ASCII] (16 Digits Max)
+0CA-0D9         DTMF Memory 8           [ASCII] (16 Digits Max)
+0DA-0E9         DTMF Memory 9           [ASCII] (16 Digits Max)
+0EA             Squelch                 [0-15]  (Min-Max)
+0EC             VFO Scan                [0-14]  (Band, 1MHz, 2MHz, 5MHz, All, PMS1-PMS10)
+0EE             P1 Mode                 [0-2]   (Menu, Frequency, Channel)
+0F0             P1 Menu                 [0-38]
+0F2             P2 Mode                 [0-2]   (Menu, Frequency, Channel)
+0F4             P2 Menu                 [0-38]
+0F6             P3 Mode                 [0-2]   (Menu, Frequency, Channel)
+0F8             P3 Menu                 [0-38]
+0FA             P4 Mode                 [0-2]   (Menu, Frequency, Channel)
+0FC             P4 Menu                 [0-38]
+0FE             P1 Channel              [0-219]
+100             P2 Channel              [0-219]
+102             P3 Channel              [0-219]
+104             P4 Channel              [0-219]
+106-127         Blank
+128             Number of Channels      [1-232]
+012A-1259       Banks
+125A-End        Channels
+
+012A-02E1       Bank 1
+02E2-0499       Bank 2
+049A-0651       Bank 3
+0652-0809       Bank 4
+080A-09C1       Bank 5
+09C2-0B79       Bank 6
+0B7A-0D31       Bank 7
+0D32-0EE9       Bank 8
+0EEA-10A1       Bank 9
+10A2-1259       Bank 10
+
+Bank contains each channel number in it padded by a zero byte
+
+CH Offsets
+00              Channel Number          [1-200]
+02              Not Used                [1]
+04              Skip / Scan             [0|1]   (Skip, Scan)
+06-0D           RX Frequency            [Float] (65-108, 136-174, 400-480 MHz)
+0E-15           Offset Frequency        [Float] (0.05-99.975 MHz)
+16              Transmit Power          [0-2]   (Low, Med, High)
+18              TX CTCSS Tone           [0-50]  (Off, 1-50=Tone)
+1A              RX CTCSS Tone           [0-50]  (Off, 1-50=Tone)
+1C              TX DCS Code             [0-104] (Off, 1-104=Code)
+1E              RX DCS Code             [0-104] (Off, 1-104=Code)
+20              Auto Offset             [0|1]   (Off, On)
+22              Offset Direction        [0-2]   (Plus, Minus, Simplex)
+24              Wide / Narrow Band      [0|1]   (5K, 2.5K)
+26              Frequency Step          [0-9]   (Auto, 5K, 6.25K, 10K, 12.5K, 15K, 20K, 25K, 50K, 100K)
+28              SQL Type                [0-6]   (Off, R-Tone, T-Tone, TSQL, REV TN, DCS, Pager)
+2A-31           Channel Label           [ASCII] (8 chars max)
+32-3F           Not Used                [0]
+
+Channels are 64 bytes each
+
+CH 1-200        Main memory
+CH 201-220      PMS
+CH 221          VFO-A UHF
+CH 222          VFO-A VHF
+CH 223          VFO-B FM
+CH 224          VFO-B VHF
+CH 225          VFO-B UHF
+CH 226          Home FM
+CH 227          Home VHF
+CH 228          Home UHF
+CH 229          P1
+CH 230          P2
+CH 231          P3
+CH 232          P4
+
+
+Menus
+0       None
+1       APO
+2       ARTS
+3       BATTSAVE
+4       B-CH.L/O
+5       BEEP
+6       BELL
+7       COMPANDER
+8       CTCSS
+9       CW ID
+10      DC VOLT
+11      DCS CODE
+12      DTMF SET
+13      DTMF WRT
+14      EDG.BEEP
+15      KEY LOCK
+16      LAMP
+17      LED
+18      MEM-DEL
+19      MON/T-CL
+20      NAME TAG
+21      PAGER
+22      PASSWORD
+23      PRI.RVT
+24      REPEATER
+25      RESUME
+26      RF SQL
+27      SCN.LAMP
+28      SKIP
+29      SQL TYPE
+30      STEP
+31      TOT
+32      TX PWR
+33      TX SAVE
+34      VFO.SPL
+35      VOX
+36      WFM.RCV
+37      WIDE/NAR
+38      WX ALERT
+66      ARTS-BEEP
+72      CTCSS-TX
+73      CW ID-TX
+76      DTMF SET-MODE
+81      LED-TX
+85      PAGER-TX
+88      REPEATER-ARS
+130     ARTS-INTV
+136     CTCSS-RX
+137     CW ID-ID
+140     DTMF SET-DELAY
+145     LED-BUSY
+149     PAGER-RX
+152     REPEATER-MODE
+204     DTMF SET-SPEED
+213     PAGER-ACK
+216     REPEATER-SHIFT
