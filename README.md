@@ -15,7 +15,7 @@ If a CSV file is not specified when converting to CSV, the output will be named 
 If ft65convert is run with the .dat file as the only argument, it will display the channels stored in it.  
 The `--config` option will display all of the settings in the .dat file.
 
-This program is currently in alpha. I do not have an FT-65 to test with yet, but the Yaesu software loads the files edited with this program. Make sure to backup your settings before using ft65convert on them in case anything goes wrong.
+This program is currently in alpha. I have been using this program with my FT-65 and it has been working correctly. However, make sure to backup your settings before using ft65convert on them in case anything goes wrong.
 
 ### Parameters:
     positional arguments:
