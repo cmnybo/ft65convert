@@ -95,7 +95,7 @@ Backup your files before using ft65convert on them.
 	)	
 	parser.add_argument("datFile",                        help="Binary data file from FT-65 Memory Programmer")
 	parser.add_argument("csvFile", nargs="?", default="", help="CSV file (required for --bin)")
-	parser.add_argument("-v", '--version', version='%(prog)s 0.1.0 (Alpha)',         action='version')
+	parser.add_argument("-v", '--version', version='%(prog)s 0.1.1 (Alpha)',         action='version')
 	parser.add_argument("-V", "--verbose", help="Prints warnings during conversion", action="store_true")
 	parser.add_argument("-c", "--csv",     help="Convert binary data to CSV file",   action="store_true")
 	parser.add_argument("-b", "--bin",     help="Convert CSV file to binary data",   action="store_true")
@@ -209,6 +209,9 @@ def readDatFile(f):
 		while (True):
 			# read channel data
 			line = bytes(f.read(0x40))
+			# don't read past the end of channel data
+			if (f.tell() > 0x3AD9):
+				break
 			# count number of channels
 			numCh += 1
 			# check for end of file
