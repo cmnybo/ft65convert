@@ -3,6 +3,9 @@ This program converts between the binary data format for the Yaesu FT-65 softwar
 It is written in python and will run on any operating system that python supports.  
 The only dependency needed to run ft65convert is [Python 3](https://www.python.org/downloads/).
 
+## This program is obsolete
+The FT-65 is supported by CHIRP now.
+
 ## Usage:
 Start by downloading the data from your radio using the free software provided by Yaesu and save it to a file (my_channels.dat for example). This contains all of the configuration data for your radio as well as all of the channels.  
 Run `ft65convert --csv my_channels.dat my_channels.csv` to convert the data from your radio to a CSV file.  
